@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar.jsx";
-
+import { useEffect,useState } from "react";
 const Home = () => {
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  useEffect(() => {
+    const userData = localStorage.getItem("userData");
+    setIsUserLoggedIn(!!userData); 
+  }, []);
+
+
   return (
     <div className=" min-h-screen to-gray-800 w-full h-screen bg-center bg-no-repeat bg-cover bg-[url('https://img.freepik.com/free-photo/floral-ornaments_23-2148134091.jpg?t=st=1726503831~exp=1726507431~hmac=d4f5955c68a6079dc6fa50ed5bae928e9a2f7589aec0f9d931a4037d9addee01&w=1060')]  max-[700px]:bg-none bg-gray-100 max-[700px]:p-0">
       <Navbar />
@@ -32,7 +39,7 @@ const Home = () => {
           </p>
         </main>
 
-        <div className="flex flex-row justify-start max-[700px]:justify-around max-[700px]:mt-10">
+        <div className={`flex flex-row justify-start max-[700px]:justify-around max-[700px]:mt-10 ${isUserLoggedIn && "hidden"}`}>
           <Link to={"/signup"}>
             <button className="h-14 w-36 ml-8 font-bold text-gray-600 rounded-md text-2xl border border-blue-400 mx-1 hover:bg-blue-500 hover:text-white max-[700px]:m-0">
               SignUp

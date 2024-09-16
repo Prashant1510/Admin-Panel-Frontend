@@ -3,36 +3,37 @@ import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import Navbar from "../../components/Navbar/Navbar";
 import UseAddNewEmployee from "../../hooks/useAddNewEmployee";
+import EmployeeCard from "../../components/EmployeeCard/EmployeeCard";
 
 const AddNewEmployee = () => {
-  // const BASE_URL = import.meta.env.VITE_BASE_URL;
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-  // const [Employee, setEmployee] = useState([]);
+  const [Employes, setEmployes] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchAllEmployes = async () => {
-  //     try {
-  //       const res = await fetch(
-  //         `${BASE_URL}/api/employeeauth/fetchallemploye`,
-  //         {
-  //           method: "GET",
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //           },
-  //           credentials: "include",
-  //         }
-  //       );
-  //       if (!res.ok) {
-  //         throw new Error("Failed to fetch Employee Data");
-  //       }
-  //       const data = await res.json();
-  //       setEmployee(data);
-  //     } catch (error) {
-  //       toast.error(error.message);
-  //     }
-  //   };
-  //   fetchAllEmployes();
-  // }, [BASE_URL]);
+  useEffect(() => {
+    const fetchAllEmployes = async () => {
+      try {
+        const res = await fetch(
+          `${BASE_URL}/api/employeeauth/fetchallemploye`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            credentials: "include",
+          }
+        );
+        if (!res.ok) {
+          throw new Error("Failed to fetch Employee Data");
+        }
+        const data = await res.json();
+        setEmployes(data);
+      } catch (error) {
+        toast.error(error.message);
+      }
+    };
+    fetchAllEmployes();
+  }, [BASE_URL]);
 
   //-----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -215,11 +216,11 @@ const AddNewEmployee = () => {
           </form>
         </div>
 
-        {/* <div className="w-full">
-          {Jobs.map((job) => (
-            <CompanyJobCard key={job._id} job={job} />
+        <div className="w-full">
+          {Employes.map((employee) => (
+            <EmployeeCard key={employee.id} employee={employee} />
           ))}
-        </div> */}
+        </div>
       </div>
     </>
   );
