@@ -155,19 +155,25 @@ const SignUp = () => {
                 </div>
 
                 <div>
-                  <select
-                    className="w-full input input-bordered h-10 border rounded-lg my-1"
-                    onChange={(e) =>
-                      setsignupInputs({ ...signupInputs, gender: e.target.value })
-                    }
-                  >
-                    <option value="" disabled hidden>
-                      Gender:*
-                    </option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                  </select>
-                </div>
+              <select
+                name=""
+                id=""
+                className="w-full py-3 my-4 rounded-lg border-2 font-semibold max-[700px]:block max-[700px]:mx-auto max-[700px]:w-full"
+                onChange={(e) =>
+                  setsignupInputs({ ...signupInputs, gender: e.target.value })
+                }
+              >
+                <option value="" disabled hidden selected className="">
+                  Gender:*
+                </option>
+                <option value="Male" className="text-lg ">
+                  Male
+                </option>
+                <option value="Female " className="text-lg ">
+                  Female{" "}
+                </option>
+              </select>
+            </div>
 
                 <p className="text-sm text-orange-500">
                   <span className="text-sm text-blue-500">Note: </span>Please
