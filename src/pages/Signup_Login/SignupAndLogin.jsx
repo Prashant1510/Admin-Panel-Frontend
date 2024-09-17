@@ -30,7 +30,6 @@ const SignUp = () => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     await LoginUser(loginInputs);
-    console.log("login");
   };
 
   return (
