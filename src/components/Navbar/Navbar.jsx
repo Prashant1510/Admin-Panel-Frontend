@@ -42,14 +42,14 @@ const Navbar = () => {
       <div>
         <Link
           to="/createEmployee"
-          className={`text-white px-4 py-2 hover:bg-gray-700 rounded ${!isUserLoggedIn && "hidden"}`}
+          className={`text-white px-4 py-2 hover:bg-gray-700 rounded max-[500px]:p-1 ${!isUserLoggedIn && "hidden"}`}
           disabled={!isUserLoggedIn}
         >
           Create Employee
         </Link>
         <button
           onClick={handleLogOut}
-          className={`text-white px-4 py-2 ml-2 bg-blue-500 hover:bg-blue-600 rounded ${!isUserLoggedIn && "hidden"}`}
+          className={`text-white px-4 py-2 ml-2 bg-blue-500 hover:bg-blue-600 rounded max-[500px]:p-1 ${!isUserLoggedIn && "hidden"}`}
           disabled={!isUserLoggedIn}
         >
           LogOut

@@ -56,7 +56,7 @@ const AddNewEmployee = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-w-96 mx-auto bg-slate-200 h-auto">
+      <div className="flex flex-col items-center justify-center min-w-96 mx-auto w-full h-auto bg-center bg-no-repeat bg-cover bg-[url('https://img.freepik.com/free-vector/white-abstract-background-design_361591-1374.jpg?t=st=1726543656~exp=1726547256~hmac=014a93d69077b26d3c1fc3457200dcbdb62fb2d06bcef53895c3d9705cbc8420&w=1380')]  max-[700px]:bg-none bg-gray-100 max-[700px]:p-0">
         <Navbar/>
 
         <div className="w-2/5 p-6 rounded-lg shadow-md bg-white m-10  max-[1300px]:w-2/4 max-[900px]:w-2/3 max-[700px]:w-full ">
@@ -174,6 +174,9 @@ const AddNewEmployee = () => {
                 </option>
                 <option value="Sales" className="text-lg ">
                   Sales{" "}
+                </option>
+                <option value="Sales" className="text-lg ">
+                  Developer{" "}
                 </option>
               </select>
             </div>
