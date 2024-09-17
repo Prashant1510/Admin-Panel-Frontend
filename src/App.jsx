@@ -13,7 +13,6 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/" element={<Home />} />
         <Route path="/createEmployee" element={<AddNewEmployee/>} />
-
       </Routes>
       <Toaster/>
     </Router>

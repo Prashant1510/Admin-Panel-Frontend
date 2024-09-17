@@ -1,9 +1,7 @@
 
 import toast from "react-hot-toast";
-// import { useNavigate } from "react-router-dom";
 
 const UseAddNewEmployee = () =>{
-    // const navigate = useNavigate();
     const BASE_URL = import.meta.env.VITE_BASE_URL;
 
     const AddEmployeeData = async ({ profilePic, name, gender, phoneNumber, designation, course, email}) =>{
